@@ -4,12 +4,26 @@
     
         puts 'Enter your Name'
         user_name = gets.chomp 
-        puts "Hello #{user_name}, you realize you are old enough to join a crew or stay home."
+        puts "Hello #{user_name}, you realize your doing nothing with you time. You are old enough to join a crew and go on an adventure or stay home. What will you do?"
         new_intro
     end
 
-    def new_intro
+    def render_ascii_art
+        File.readlines("pics.txt") do |line|
+          puts line
+        end
+      end
+
+    def render_ascii_art2
+        File.readlines("pics2.txt") do |line|
+          puts line
+        end
+      end
+
     
+
+    def new_intro
+        puts render_ascii_art
         puts 'Decide your adventure (1 or 2)' 
         puts '1. Join a crew! Pick Wisely '
         puts '2. Just Stay Home , Be boring!'
@@ -21,7 +35,7 @@
         else 
             start_game
         end
-
+       
     end
 
     def new_adventure
@@ -92,6 +106,7 @@
     end
 
     def life_death
+        puts render_ascii_art2
         puts 'A fierce battle took place, you were able to drop White Beard. After looking at him clearly you realize thats your brother. Finish him or let him get away.'
         puts '1. Finish him! Become a hero and retire to milk goats.'
         puts '2 .Let him get away and get kicked out of the Royal Navy.'
